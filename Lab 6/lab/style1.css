@@ -1,0 +1,15 @@
+.box {
+}
+body {
+ width: 100vw;
+ height: 100vh;
+ margin: 0;
+ padding: 0;
+}
+.box {
+ background: #ff7842;
+ width: 50vw;
+ height: 25vh;
+ margin: 2em;
+ padding: 5vw;
+}

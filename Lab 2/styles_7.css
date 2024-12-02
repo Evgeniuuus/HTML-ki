@@ -1,0 +1,38 @@
+.b-radius{
+border: 4px double gainsboro;
+padding: 25px;
+border-radius: 30px 10px;
+background-color: rgb(65,105,225);
+color: rgb(255,255,255);
+}
+
+.b-radius2{
+border: 4px double gainsboro;
+padding: 25px;
+border-radius: 50px 50px;
+background-color: rgb(255,140,0);
+color: rgb(80,41,41);
+}
+
+.b-radius3{
+border: 4px double gainsboro;
+padding: 25px;
+border-radius: 13em 0.5em/1em 0.5em;
+background-color: rgb(255,255,255);
+color: rgb(68,10,70);
+}
+
+.b-radius4{
+border: 4px double gainsboro;
+padding: 25px;
+border-radius: 10em / 1em;
+background-color: rgb(255,255,0);
+color: rgb(8,71,19);
+}
+
+.b-radius5{
+border: 4px double gainsboro;
+padding: 25px;
+border-radius: 10px 10px;
+background-color: rgb(211,211,211);
+}

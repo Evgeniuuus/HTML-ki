@@ -1,0 +1,14 @@
+.letter{
+font-family: 'Courier New', Courier;
+monospace; color: #ff0000;
+font-size: 40px;
+}
+
+.author{
+font-weight: 600;
+}
+
+p{
+font-size: 20px;
+font-style: italic;
+}

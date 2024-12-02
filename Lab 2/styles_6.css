@@ -1,0 +1,26 @@
+body { font-family: Arial, Verdana; /* Семейство шрифтов */
+ font-size: 11pt; /* Размер основного шрифта в пунктах */
+ background-color:rgb(255, 255, 255); /* Цвет фона веб-страницы */
+ color: rgb(0, 0, 0) /* Цвет основного текста */
+}
+p {
+ font-style: normal;
+ color: rgb(47, 79, 79);
+ font-size: 16px;
+ line-height: 1;
+}
+h1 {
+color: rgb(47, 79, 79);
+}
+
+li.red{
+color:red;
+}
+
+li.green{
+color:green;
+}
+
+li.blue{
+color:blue;
+}

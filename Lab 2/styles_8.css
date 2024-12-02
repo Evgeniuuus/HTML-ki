@@ -1,0 +1,13 @@
+.blocksection {
+ display: flex;
+}
+.column {
+ width: 50%;
+ margin: 10px;
+}
+.term{
+ font-style:normal;
+ font-weight:100;
+ font-size:25px;
+ color:rgb(16,3,75);
+}

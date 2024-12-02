@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tiny-frog {
+    transition: transform 1s;
+}
+
+.tiny-frog:hover{
+    transform: translate(400px, 50px);
+}
+
+.tiny-frog img {
+    width: 100px;
+}
+
+.container {
+    width: 600px;
+    border: 2px solid rgb(80, 173, 255);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.group-of-frogs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 300px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.frog,
+.tiny-frog {
+    width: 100px;
+    min-height: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.frog img {
+    width: 100%;
+}
+
+
+.logo {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}

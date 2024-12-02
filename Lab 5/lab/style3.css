@@ -1,0 +1,26 @@
+.elem1 {
+ width: 100px;
+ height: 100px;
+ background-color: #FF8888;
+ position:absolute;
+    top:50px;
+    left:50px;
+ }
+
+.elem2 {
+ width: 100px;
+ height: 100px;
+ background-color: #1a4ad8;
+ position: absolute;
+    top:80px;
+    left:80px;
+ }
+
+.elem3 {
+ width: 100px;
+ height: 100px;
+ background-color: #23e723;
+ position: absolute;
+ top:110px;
+ left:110px;
+ }

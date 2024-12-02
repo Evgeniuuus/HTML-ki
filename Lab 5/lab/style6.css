@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    color: #011F3A;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 4em;
+    color: #011F3A;
+    display: flex; /* Просто чтобы логотип и меню выстроились в ряд */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4em;
+    box-shadow: 0 0 40px 10px rgb(180, 180, 180);
+}
+
+.logo img {
+    height: 3.5em;
+}
+
+main {
+    width: 100vw;
+    min-height: calc(100vh - 4em);
+    background: rgba(20, 16, 64, .22);
+    display: flex; /* Чтобы разделить на две большие колонки - с картинкой и с текстом */
+    align-items: center;
+}
+
+.flex-right {
+    width: 40%;
+}
+
+.flex-right img {
+    width: 100%;
+}
+
+.flex-left {
+    width: 60%;
+    margin-left: 4em;
+}
+
+.flex-left-inner {
+    width: 60%;
+}
+
+.flex-left-inner h1 {
+    font-size: 48px;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.btn-main {
+    background: #FA8A0A;
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    height: 4em;
+    padding: 0 2em;
+    display: flex; /* Чтобы правильно указать border-radius, нужно заранее знать точную высоту кнопки. Поэтому высота указана точно в 4em, а display-flex используется чтобы без вертикальных отступов выровнять текст по центру кнопки по вертикали */
+    align-items: center;
+    border-radius: 2em;
+    user-select: none;
+    cursor: pointer;
+}
+
+.menu{
+text-align: center;
+height: 3.5em;
+display: flex;
+direction: flex-wrap;
+justify-content: flex-start;
+margin: 10px;
+}
+
+.menu-elements{
+padding-top:18px;
+margin-left: 10px;
+color: RGB(10,10,120);
+}
