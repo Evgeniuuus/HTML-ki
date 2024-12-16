@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Galaxy</title>
+    <script src='https://kit.fontawesome.com/f77600b8df.js' crossorigin='anonymous'></script>
+	<script src='task2.js' defer> </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            background: url('bg_mars.png');
+            background-size: cover;
+            background-position: center center; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-direction: column;
+        }
+
+        .arrow-next {
+            font-size: 5em;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        main {
+            width: 100%;
+            min-height: 100vh;
+            background: white;
+        }
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+            background: #D1BBAA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 5em 0;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .section1 {
+            background-color: #D1BBAA;
+        }
+
+        .section2 {
+            background-color: #C2AB99;
+        }
+
+        .section3 {
+            background-color: #D1BBAA;
+        }
+
+        nav {
+            width: 100vw;
+            padding: 1em 0 1em;
+            position: fixed;
+            display: flex;
+            justify-content: flex-end;
+            box-sizing: border-box;
+        }
+
+        .nav-item {
+            width: fit-content;
+            padding: .5em;
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: .5em;
+            color: white;
+            margin-right: 1em;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        #team > h1 {
+            text-transform: uppercase;
+            font-size: 2.5em;
+            text-align: left;
+            width: 80vw;
+        }
+
+        .team-wrapper,
+        .about-wrapper {
+            width: 80vw;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2em;
+        }
+
+        #about > h1 {
+            text-transform: uppercase;
+            font-size: 2.5em;
+            text-align: left;
+            width: 80vw;
+        }
+
+        .about-wrapper {
+            flex-direction: column;
+        }
+
+        .about-wrapper p{
+            width: 100%;
+        }
+
+        .team-item {
+            width: 22vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-item-top {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-size: cover;
+            border: 5px solid white;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+
+        .team1 .team-item-top {
+            background: url(astr1.png);
+            background-size: cover;
+        }
+
+        .team2 .team-item-top {
+            background: url(astr2.png);
+            background-size: cover;
+        }
+
+        .team3 .team-item-top {
+            background: url(astr3.png);
+            background-size: cover;
+        }
+
+        .team-item-bottom h2 {
+            text-transform: uppercase;
+        }
+
+        .submit-wrapper {
+            width: 60vw;
+        }
+
+        .submit-wrapper > h1 {
+            text-transform: uppercase;
+            font-size: 2.5em;
+            text-align: left;
+            width: 60vw;
+        }
+
+        .submit-form {
+            width: 100%;
+            display: flex;
+            border: 1px solid #5D4229;
+            border-bottom: none;
+            box-sizing: border-box;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding: 1em;
+        }
+
+        .submit-btn-row{
+            width: 100%;
+            display: flex;
+        }
+
+        .submit-btn {
+            width: 50%;
+            box-sizing: border-box;
+            background: #C2AB99;
+            display: flex;
+            justify-content: center;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .submit-btn-calc {
+            border-bottom-left-radius: 5px;
+            padding: .5em;
+            border-right: .5px solid #D1BBAA;
+            border-left: 1px solid #5D4229;
+            border-bottom: 1px solid #5D4229;
+        }
+
+        .submit-btn-send {
+            border-bottom-right-radius: 5px;
+            padding: .5em;
+            border-left: .5px solid #D1BBAA;
+            border-right: 1px solid #5D4229;
+            border-bottom: 1px solid #5D4229;
+        }
+
+        .submit-form {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .submit-input,
+        .submit-select {
+            font-family: 'Montserrat', sans-serif;
+            background: transparent;
+            border: none;
+            padding: .5em;
+            border-bottom: 1px solid #5D4229;
+            font-size: 1.1em;
+        }
+
+        .submit-input:active,
+        .submit-input:focus,
+        .submit-select:active,
+        .submit-select:focus {
+            border-bottom: 1px solid #5D4229;
+            outline: none;
+        }
+
+        .submit-select {
+            /* border: none; */
+            padding: calc(.5em - 1px);
+        }
+
+        .submit-input-label {
+            font-size: .7em;
+            margin: 0 0 1em 0;
+            padding-left: .7em;
+        }
+
+        .submit-input-row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .group {
+            width: calc(50% - 2px);
+            margin: 0;
+            padding: 0;
+        }
+
+        .row-item {
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    </style>
+    <script>
+        // Пожалуйста, не меняйте код ниже. Он необходим для правильной настройки позиционирования элементов
+        let team1 = document.querySelector('.team1')
+        let team2 = document.querySelector('.team2')
+        let team3 = document.querySelector('.team3')
+        let height = Math.max(parseInt(getComputedStyle(team1).getPropertyValue('height')), parseInt(getComputedStyle(team2).getPropertyValue('height')), parseInt(getComputedStyle(team3).getPropertyValue('height')))
+        team1.style.height = `${height}px`
+        team2.style.height = `${height}px`
+        team3.style.height = `${height}px`
+
+        // Функция, которую нужно вызвать при клике на стрелку
+        function scrollDown() {
+            window.scrollTo({top: window.innerHeight, behavior: 'smooth' });
+        }
+
+        // Исправь ошибки, допущенные при обработке события 
+        let button = document.querySelector('.arrow-next')
+        addEventListener(button, click, scrollDown())
+    </script>
+</head>
+<body>
+    <nav>
+        <div class='nav-item' onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">Проект</div>
+        <div class='nav-item' onclick="document.getElementById('team').scrollIntoView({behavior: 'smooth'});">Команда</div>
+        <div class='nav-item' onclick="document.getElementById('submit').scrollIntoView({behavior: 'smooth'});">Заявка</div>
+        <div class='nav-item switch-theme-button'>Сменить тему</div>
+    </nav>
+    <header>
+        <h1>Летим на <span class='mars mars1'>марс</span></h1>
+        <div class='arrow-next'><i class='fa-solid fa-arrow-down'></i></div>
+    </header>
+    <main>
+        <section class='section1' id='about'>
+            <h1>О проекте</h1>
+            <div class='about-wrapper'>
+                <p>Во времена активного освоения космоса, полеты на Луну стали доступны богатым людям из развитых стран. С тех прошло несколько сотен лет, за которые развитие технологий совершило новый виток. Сейчас полетами на луну <i>никого не удивить</i>.</p>
+                <p>Если вы хотите испытать новые ощущения, выйти за рамки и превнести в свою жизнь что-то кардинально новое - у вас есть все шансы стать одним из первых счастливчиков, покоривших глубины космоса. Впервые в истории человечества мы делаем доступными полёты на <span class='mars mars2'><b>Марс</b></span>.</p>
+                <p>До сих пор Красный Гигант покоряли лишь ученые и исследователи. Потребовались сотни лет и не одна техническая революция, чтобы <span class='mars mars3'>Марс</span> стал пригодным для колониальной жизни и частных визитов. Проект Galaxy первым получил уникальное право организации частных рейсов на <span class='mars mars4'>Марс</span>.</p>
+                <p>Добро пожаловать в <b>новый мир</b>.</p>
+            </div>
+        </section>
+        <section class='section2' id='team'>
+            <h1>Команда</h1>
+            <div class='team-wrapper'>
+                <div class='team-item team1'>
+                    <div class='team-item-top'></div>
+                    <div class='team-item-bottom'>
+                        <h2>Джамал</h2>
+                        <p>Капитан корабля. За плечами десятки полетов и сплоченная команда.</p>
+                    </div>
+                </div>
+                <div class='team-item team2'>
+                    <div class='team-item-top'></div>
+                    <div class='team-item-bottom'>
+                        <h2>Артем</h2>
+                        <p>Первый пилот. Поднимет и приземлит любой корабль.</p>
+                    </div>
+                </div>
+                <div class='team-item team3'>
+                    <div class='team-item-top'></div>
+                    <div class='team-item-bottom'>
+                        <h2>Данил</h2>
+                        <p>Второй пилот.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='section3' id='submit'>
+            <div class='submit-wrapper'>
+                <h1>Заявка</h1>
+                <div class='submit-form'>
+                    <input class='submit-input' type='text' placeholder='имя'>
+                    <p class='submit-input-label'>имя</p>
+                    <input class='submit-input' type='email' placeholder='e-mail'>
+                    <p class='submit-input-label'>e-mail</p>
+                    <input class='submit-input' type='text' placeholder='телефон'>
+                    <p class='submit-input-label'>номер телефона</p>
+                    <div class='submit-input-row'>
+                        <div class='group'>
+                            <input class='submit-input row-item days-input' type='number' placeholder='дни'>
+                            <p class='submit-input-label'>дней на <span class='mars mars5'>Марсе</span></p>
+                        </div>  
+                        <div class='group'>
+                            <select class='submit-select row-item' placeholder='каюта'>
+                                <option value='1000' selected='selected'>Базовый</option>
+                                <option value='2000'>Премиум</option>
+                                <option value='3000'>Люкс</option>
+                            </select>
+                            <p class='submit-input-label'>класс каюты</p>
+                        </div>  
+                    </div>
+                </div>
+                <div class='submit-btn-row'>
+                    <div class='submit-btn submit-btn-calc'>Стоимость</div>
+                    <div class='submit-btn submit-btn-send'>Отправить</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

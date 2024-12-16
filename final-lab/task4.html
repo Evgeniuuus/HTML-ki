@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Bank</title>
+    <script src='task4.js' defer></script>
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.left {
+    width: 70vw;
+    height: 100vh;
+    overflow: scroll;
+    background-color: aliceblue;
+}
+
+
+.card-wrapper {
+    width: 100%;
+    padding-top: 4em;
+    padding-bottom: 3em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-wrapper h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    width: 80%;
+}
+ 
+.card {
+    width: 80%;
+    aspect-ratio: 1.66;
+    background: rgb(253,29,29);
+    background: -moz-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    border-radius: 20px;
+    padding: 2em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.card img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+input {
+    margin-top: 2em;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1em;
+    padding: .2em;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    z-index: 1;
+}
+
+input:active,
+input:focus {
+    outline: none
+}
+
+.card .card-number {
+    width: 75%;
+}
+
+.card-holder-group {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-holder-name,
+.card-holder-surname {
+    width: 49%;
+}
+
+.card-expire-group {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-expire-month,
+.card-expire-year {
+    width: 47%;
+}
+
+
+
+.user-wrapper {
+    width: 100%;
+    padding-bottom: 7em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-wrapper h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    width: 80%;
+}
+
+.user-info-group {
+    width: 80%;
+    padding: 1em 0 1em 1em;
+    border-left: 1px solid rgb(253,29,29);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info-group input {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 50%;
+    border: 1px solid rgba(252,176,69,1);
+}
+
+.user-info-group p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.user-info-group select {
+    font-family: 'Montserrat', sans-serif; 
+    width: 50%;
+    box-sizing: border-box;
+    border: 1px solid rgba(252,176,69,1);
+    font-size: 1em;
+    padding: .2em;
+    border-radius: 5px;
+}
+
+.user-info-group select:focus,
+.user-info-group select:active {
+    outline: none;
+}
+
+
+.create-card-btn {
+    margin-top: 1em;
+    background: rgb(253,29,29);
+    background: -moz-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    border-radius: 5px;
+    padding: .5em;
+    box-sizing: border-box;
+    width: fit-content;
+    color: white;
+    user-select: none;
+}
+
+.create-card-btn:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.create-card-btn:active {
+    filter: brightness(1.2);
+}
+
+.right {
+    width: 30vw;
+    height: 100vh;
+    background-color: azure;
+    padding-top: 2em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards {
+    width: 30vw;
+    height: fit-content;
+    overflow: scroll;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.get-card-info-group {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.get-card-info-group input {
+    margin-top: 0;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.get-card-info-btn {
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: rgb(253,29,29);
+    background: -moz-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: .5em;
+    padding: .5em;
+    user-select: none;
+    flex-grow: 1;
+}
+
+.get-card-info-btn:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.get-card-info-btn:active {
+    filter: brightness(1.2);
+}
+
+.card-small {
+    width: 80%;
+    aspect-ratio: 1.66;
+    background: rgb(253,29,29);
+    background: -moz-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(142deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 1em;
+    box-sizing: border-box;
+    color: white;
+    margin-bottom: 2em;
+    flex-shrink: 0;
+}
+
+.card-small img {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.card-small p {
+    margin: 0;
+    margin-top: .5em;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px black;
+    z-index: 1;
+}
+
+.cvv {
+    color: white;
+    position: absolute;
+    text-shadow: 1px 1px 3px black;
+    font-size: 1.2em;
+    bottom: 1em;
+    right: 1em;
+    box-sizing: border-box;
+    letter-spacing: .3em;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cvv:hover {
+    text-shadow: 1px 1px 2px black;
+}
+
+.cvv:active {
+    text-shadow: 1px 1px 1px black;
+}
+    </style>    
+    <script src='https://kit.fontawesome.com/f77600b8df.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class='container'>
+        <div class='left'>
+            <div class='card-wrapper'>
+                <h1>Данные карты</h1>
+                <div class='card'>
+                    
+                    <input class='card-number' type='number' placeholder='11 22 33'>
+                    <div class='card-holder-group'>
+                        <input class='card-holder-name' type='text' placeholder='Name'>
+                        <input class='card-holder-surname' type='text' placeholder='Surname'>
+                    </div>
+                    <div class='card-expire-group'>
+                        <input class='card-expire-month' type='number' placeholder='10'>
+                        <input class='card-expire-year' type='number' placeholder='27'>
+                    </div>
+                </div>
+            </div>
+            <div class='user-wrapper'>
+                <h1>Данные пользователя</h1>
+                <div class='user-info-group'>
+                    <p>Номер телефона</p>
+                    <input class='card-holder-phone' type='text'>
+                    <p>Электронная почта</p>
+                    <input class='card-holder-email' type='email'>
+                    <p>Пол</p>
+                    <select class='card-holder-gender'>
+                        <option value='Ж'>Женский</option>
+                        <option value='М'>Мужской</option>
+                    </select>
+                    <div class='create-card-btn'>Создать карту<i style='margin-left: 1em' class='fa-solid fa-arrow-right'></i></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class='right'>
+            <div class='get-card-info-group'>
+                <input class='get-card-info' type='number'>
+                <div class='get-card-info-btn'>Получить</div>
+            </div>
+            <div class='cards'>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
